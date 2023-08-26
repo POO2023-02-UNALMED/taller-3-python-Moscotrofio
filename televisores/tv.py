@@ -3,7 +3,7 @@ class TV:
     def __init__(self, marca, estado):
         self._marca = marca
         self._estado = estado
-        self._canal = 1
+        self.canal = 1
         self._volumen = 1
         self._precio = 500
         self._control = None
@@ -69,7 +69,7 @@ class TV:
             if self._volumen < 7:
                 self._volumen += 1
 
-    def voluemnDown(self):
+    def volumenDown(self):
         if self._estado:
             if self._volumen > 0:
                 self._volumen -= 1
