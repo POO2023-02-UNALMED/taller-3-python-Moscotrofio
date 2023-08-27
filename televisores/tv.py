@@ -14,9 +14,10 @@ class TV:
     def getMarca(self):
         return self._marca
     
-    def setCanal(self, _canal):
-        if ((self._estado == True) and (_canal>=1 and _canal<=120)):
-            self._canal = _canal
+    def setCanal(self, canal):
+        if self._estado:
+            if 1 <= canal and canal <= 120:
+                self._canal = canal
     def getCanal(self):
         return self._canal
 
@@ -51,11 +52,13 @@ class TV:
         return self._estado
     
     def canalUp(self):
-        if((self._estado == True)) and (self._canal>=1 and self._canal<120):
-            self._canal += 1
+        if self._estado:
+            if self._canal < 120:
+                self._canal += 1
     def canalDown(self):
-        if((self._estado == True) and (self._canal>1 and self._canal<=120)):
-            self._canal -= 1
+        if self._estado:
+            if self._canal > 1:
+                self._canal -= 1 
 
     def volumenUp(self):
         if self._estado:
