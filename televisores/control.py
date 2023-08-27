@@ -3,7 +3,7 @@ class Control:
         self._tv = None
 
     def enlazar(self, tv):
-        self._tv = tv
+        tv.setControl(self)
         tv._control = self
 
     def getTv(self):
@@ -13,25 +13,33 @@ class Control:
         self._tv = tv
 
     def turnOn(self):
-        self._tv.turnOn()
+        if self._tv != None:
+            self._tv.turnOn()
 
     def turnOff(self):
-        self._tv.turnOff()
+        if self._tv != None:
+            self._tv.turnOff() 
 
     def canalUp(self):
-        self._tv.canalUp()
+        if self._tv != None:
+            self._tv.canalUp()
 
     def canalDown(self):
-        self._tv.canalDown()
+        if self._tv != None:
+            self._tv.canalDown()
 
     def volumenUp(self):
-        self._tv.volumenUp()
+        if self._tv != None:
+            self._tv.volumenUp()
 
     def volumenDown(self):
-        self._tv.volumenDown()
+        if self._tv != None:
+            self._tv.volumenDown()
 
     def setCanal(self, canal):
-        self._tv._canal = canal
+        if self._tv != None:
+            self._tv.setCanal(canal)
         
     def setVolumen(self, volumen):
-        self._tv._volumen = volumen
+        if self._tv != None:
+            self._tv.setVolumen(volumen)
